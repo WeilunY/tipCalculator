@@ -25,17 +25,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         // load values
-        let tip0 = defaults.double(forKey: "tip0") * 100;
-        tipLabel1.text = String(format: "%.0f", tip0) + "%";
-        tipSlider1.value = Float(tip0);
-        
-        let tip1 = defaults.double(forKey: "tip1") * 100;
-        tipLabel2.text = String(format: "%.0f", tip1) + "%";
-        tipSlider2.value = Float(tip1);
-        
-        let tip2 = defaults.double(forKey: "tip2") * 100;
-        tipLabel3.text = String(format: "%.0f", tip2) + "%";
-        tipSlider3.value = Float(tip2);
+        loadValue();
     }
     
     
@@ -72,6 +62,19 @@ class SettingsViewController: UIViewController {
         defaults.set(0.20, forKey: "tip1");
         defaults.set(0.25, forKey: "tip2");
         
+    }
+    
+    func loadValue(){
+        let tip0 = defaults.double(forKey: "tip0") * 100;
+        tipLabel1.text = String(format: "%.0f", tip0) + "%";
+        tipSlider1.value = Float(tip0);
         
+        let tip1 = defaults.double(forKey: "tip1") * 100;
+        tipLabel2.text = String(format: "%.0f", tip1) + "%";
+        tipSlider2.value = Float(tip1);
+        
+        let tip2 = defaults.double(forKey: "tip2") * 100;
+        tipLabel3.text = String(format: "%.0f", tip2) + "%";
+        tipSlider3.value = Float(tip2);
     }
 }

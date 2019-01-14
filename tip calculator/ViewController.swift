@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         self.title = "Tip Calculator";
         billField.delegate = self;
         billField.keyboardType = .decimalPad;
+        billField.becomeFirstResponder();
         
 
         if let x = defaults.object(forKey: "time") as? Date{
